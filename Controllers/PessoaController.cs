@@ -113,5 +113,26 @@ public class PessoaController : ControllerBase
         return Ok(response);
     }
 
+    [HttpGet("totais")]
+    public async Task<ActionResult<PessoaTotaisGeraisResponseDTO>> ObterTotaisGerais()
+    {
+        var totalReceitas = _context.Transacoes
+            .Where(t => t.Tipo == TipoTransacao.Receita)
+            .AsEnumerable()
+            .Sum(t => t.Valor);
+
+        var totalDespesas = _context.Transacoes
+            .Where(t => t.Tipo == TipoTransacao.Despesa)
+            .AsEnumerable()
+            .Sum(t => t.Valor);
+
+        var response = new PessoaTotaisGeraisResponseDTO
+        {
+            TotalReceitas = totalReceitas,
+            TotalDespesas = totalDespesas
+        };
+
+        return Ok(response);
+    }
 
 }
