@@ -1,5 +1,6 @@
 using ControleGastos.Api.Application.DTOs;
 using ControleGastos.Api.Domain.Entities;
+using ControleGastos.Api.Domain.Enums;
 using ControleGastos.Api.Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -81,5 +82,36 @@ public class PessoaController : ControllerBase
 
         return NoContent();
     }
+
+    [HttpGet("{id}/totais")]
+    public async Task<ActionResult<PessoaTotaisResponseDTO>> ObterTotaisPorPessoa(Guid id)
+    {
+        var pessoa = await _context.Pessoas
+            .FirstOrDefaultAsync(p => p.Id == id);
+
+        if (pessoa is null)
+            return NotFound("Pessoa não encontrada.");
+
+        var totalReceitas = _context.Transacoes
+            .Where(t => t.PessoaId == id && t.Tipo == TipoTransacao.Receita)
+            .AsEnumerable()
+            .Sum(t => t.Valor);
+
+        var totalDespesas = _context.Transacoes
+            .Where(t => t.PessoaId == id && t.Tipo == TipoTransacao.Despesa)
+            .AsEnumerable()
+            .Sum(t => t.Valor);
+
+        var response = new PessoaTotaisResponseDTO
+        {
+            PessoaId = pessoa.Id,
+            Nome = pessoa.Nome,
+            TotalReceitas = totalReceitas,
+            TotalDespesas = totalDespesas
+        };
+
+        return Ok(response);
+    }
+
 
 }
