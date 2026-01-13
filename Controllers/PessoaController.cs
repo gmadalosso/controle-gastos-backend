@@ -67,4 +67,19 @@ public class PessoaController : ControllerBase
 
         return Ok(response);
     }
+
+    [HttpDelete("{id:guid}")]
+    public async Task<IActionResult> Excluir(Guid id)
+    {
+        var pessoa = await _context.Pessoas.FindAsync(id);
+
+        if (pessoa == null)
+            return NotFound();
+
+        _context.Pessoas.Remove(pessoa);
+        await _context.SaveChangesAsync();
+
+        return NoContent();
+    }
+
 }
