@@ -58,7 +58,7 @@ controle-gastos-backend/
 
 ### Backend
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
-- Visual Studio 2022, VS Code ou Rider (opcional)
+- Visual Studio 2022 ou VS Code (opcional)
 
 ### Frontend
 - [Node.js](https://nodejs.org/) versão 22 ou superior
