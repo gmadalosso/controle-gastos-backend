@@ -1,6 +1,6 @@
-# Controle de Gastos
+# Sistema de Controle de Gastos
 
-Sistema de controle financeiro pessoal desenvolvido com .NET 8 e React, permitindo gerenciar pessoas, categorias e transações financeiras (receitas e despesas).
+Sistema de controle financeiro desenvolvido com .NET 8 e React, permitindo gerenciar pessoas, categorias e transações financeiras (receitas e despesas).
 
 > 📚 **Documentação Detalhada**: Para entender em profundidade como o backend e frontend funcionam, consulte os arquivos [BACKEND.md](./BACKEND.md) e [FRONTEND.md](./FRONTEND.md), que explicam a arquitetura, fluxo de dados e futuras melhorias de cada parte do sistema.
 
