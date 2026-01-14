@@ -11,6 +11,7 @@ Sistema de controle financeiro desenvolvido com .NET 8 e React, permitindo geren
 - [Pré-requisitos](#-pré-requisitos)
 - [Como Executar](#-como-executar)
 - [Funcionalidades](#-funcionalidades)
+- [Screenshots](#-screenshots)
 - [API Endpoints](#-api-endpoints)
 - [Regras de Negócio](#-regras-de-negócio)
 - [Seed Data](#-seed-data)
@@ -115,6 +116,22 @@ O frontend estará disponível em `http://localhost:5173` ou `http://localhost:5
 - ✅ Validações de regras de negócio
 - ✅ Seed data automático na inicialização
 - ✅ Documentação Swagger da API
+
+## 📸 Screenshots
+
+<div align="center">
+  <img src="imagens/img01.png" alt="Screenshot 1" width="800"/>
+  <br/><br/>
+  <img src="imagens/img02.png" alt="Screenshot 2" width="800"/>
+  <br/><br/>
+  <img src="imagens/img03.png" alt="Screenshot 3" width="800"/>
+  <br/><br/>
+  <img src="imagens/img04.png" alt="Screenshot 4" width="800"/>
+  <br/><br/>
+  <img src="imagens/img05.png" alt="Screenshot 5" width="800"/>
+  <br/><br/>
+  <img src="imagens/img06.png" alt="Screenshot 6" width="800"/>
+</div>
 
 ## 🔌 API Endpoints
 
